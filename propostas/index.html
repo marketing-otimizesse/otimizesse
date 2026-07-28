@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  ══════════════════════════════════════════════════════════
+  MODELO DE PROPOSTA COMERCIAL — OTIMIZESSE
+  Como usar (por proposta):
+  1. Duplique este arquivo para: propostas/nome-do-cliente/index.html
+  2. Edite tudo que estiver marcado com o comentário EDITAR
+  3. Commit → a URL fica: otimizesse.com.br/propostas/nome-do-cliente/
+  Nunca remova a tag "robots noindex": ela impede que a
+  proposta (e os preços) apareçam no Google.
+  ══════════════════════════════════════════════════════════
+-->
+<meta name="robots" content="noindex, nofollow">
+<title>Proposta Comercial — OtimiZesse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0D0F1E;--ink-2:#161930;
+  --paper:#F3F4F8;--paper-2:#E9EBF2;
+  --violet:#584DFF;--violet-deep:#3B32C9;--lilac:#C9C6FF;
+  --line:rgba(13,15,30,.14);--line-light:rgba(243,244,248,.16);
+  --z:14deg;
+  --fd:'Syne',sans-serif;--fb:'Instrument Sans',sans-serif;--fm:'Space Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden}
+body{font-family:var(--fb);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--violet);color:#fff}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--fm);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.6em}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--violet);transform:skewX(calc(var(--z) * -1))}
+
+/* capa */
+.cover{background:var(--ink);color:var(--paper);padding:64px 0 72px;position:relative;overflow:hidden;clip-path:polygon(0 0,100% 0,100% calc(100% - 3.4vw),0 100%)}
+.cover .eyebrow{color:var(--lilac)}
+.cover-mark{position:absolute;right:-40px;top:50%;translate:0 -50%;width:340px;aspect-ratio:325/267;color:var(--paper);opacity:.06;transform:rotate(calc(var(--z) * -.4));pointer-events:none}
+.cover .wrap{position:relative;z-index:1}
+.cover-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:56px;gap:16px;flex-wrap:wrap}
+.logo{font-family:var(--fd);font-weight:800;font-size:1.2rem;display:inline-flex;align-items:center;gap:10px}
+.logo .zc{color:var(--violet);display:inline-block;transform:skewX(calc(var(--z) * -1))}
+.logo-mark{width:42px;height:35px;color:var(--paper)}
+.prop-meta{font-family:var(--fm);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(243,244,248,.55);text-align:right}
+.cover h1{font-family:var(--fd);font-weight:800;font-size:clamp(1.9rem,6.5vw,4rem);line-height:1.02;letter-spacing:-.02em;text-transform:uppercase;margin-top:20px}
+.cover h1 .hl{color:var(--lilac)}
+.cover-sub{margin-top:26px;display:flex;gap:36px;flex-wrap:wrap}
+.cover-sub div{font-size:.92rem}
+.cover-sub b{display:block;font-family:var(--fm);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(243,244,248,.5);font-weight:400;margin-bottom:4px}
+
+/* seções */
+section{padding:72px 0 0}
+section:last-of-type{padding-bottom:72px}
+.sec-head{margin-bottom:36px}
+.sec-head h2{font-family:var(--fd);font-weight:700;font-size:clamp(1.5rem,3.6vw,2.2rem);letter-spacing:-.01em;margin-top:14px}
+.sec-head h2 em{font-style:normal;color:var(--violet)}
+p.lead{color:rgba(13,15,30,.75);max-width:64ch}
+
+/* escopo */
+.scope{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.scope-card{background:#fff;border:1.5px solid var(--line);padding:26px 24px;position:relative}
+.scope-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--violet);transform:skewX(calc(var(--z) * -1));transform-origin:top left}
+.scope-card h3{font-family:var(--fd);font-weight:700;font-size:1.1rem;margin-bottom:8px}
+.scope-card ul{list-style:none;margin-top:10px}
+.scope-card li{font-size:.92rem;color:rgba(13,15,30,.75);padding:4px 0 4px 18px;position:relative}
+.scope-card li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--violet);transform:skewX(calc(var(--z) * -1))}
+
+/* cronograma */
+.timeline{border-top:1.5px solid var(--line)}
+.t-row{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:22px 4px;border-bottom:1.5px solid var(--line)}
+.t-row b{font-family:var(--fm);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--violet-deep);font-weight:700;padding-top:3px}
+.t-row h3{font-family:var(--fd);font-weight:700;font-size:1.05rem}
+.t-row p{font-size:.94rem;color:rgba(13,15,30,.72)}
+
+/* investimento */
+.invest{background:var(--ink);color:var(--paper);padding:44px 40px;position:relative;overflow:hidden}
+.invest::after{content:"";position:absolute;top:-30%;right:-20px;width:44px;height:160%;background:var(--violet);transform:skewX(calc(var(--z) * -1))}
+.invest h2{font-family:var(--fd);font-weight:700;font-size:1.5rem;margin-bottom:24px}
+.inv-table{width:100%;border-collapse:collapse}
+.inv-table th{font-family:var(--fm);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(243,244,248,.5);text-align:left;padding:0 0 12px;font-weight:400}
+.inv-table th:last-child,.inv-table td:last-child{text-align:right}
+.inv-table td{padding:14px 0;border-top:1px solid var(--line-light);font-size:.96rem}
+.inv-table .total td{font-family:var(--fd);font-weight:700;font-size:1.15rem;border-top:2px solid var(--lilac)}
+.inv-note{margin-top:18px;font-size:.84rem;color:rgba(243,244,248,.6)}
+
+/* condições */
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.term{border:1.5px solid var(--line);padding:20px 22px;background:#fff}
+.term b{display:block;font-family:var(--fm);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,15,30,.5);font-weight:400;margin-bottom:6px}
+.term span{font-weight:600}
+
+/* aceite */
+.accept{margin-top:72px;background:var(--paper-2);padding:44px 40px;text-align:left}
+.accept h2{font-family:var(--fd);font-weight:800;font-size:clamp(1.6rem,4.5vw,2.4rem);text-transform:uppercase;letter-spacing:-.02em}
+.accept h2 .zc{color:var(--violet);display:inline-block;transform:skewX(calc(var(--z) * -1))}
+.accept p{margin:14px 0 26px;color:rgba(13,15,30,.72);max-width:52ch}
+.btn{display:inline-flex;align-items:center;gap:.55em;font-weight:600;font-size:.95rem;padding:14px 28px;background:var(--violet);color:#fff;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transition:background .25s,transform .2s;border:none;cursor:pointer}
+.btn:hover{background:var(--violet-deep);transform:translateY(-2px)}
+.validity{margin-top:16px;font-family:var(--fm);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,15,30,.5)}
+
+/* rodapé */
+footer{background:var(--ink);color:rgba(243,244,248,.6);padding:28px 0;margin-top:72px;font-family:var(--fm);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:680px){
+  .scope,.terms{grid-template-columns:1fr}
+  .t-row{grid-template-columns:1fr;gap:6px}
+  .invest,.accept{padding:32px 22px}
+  .prop-meta{text-align:left}
+  .cover-mark{display:none}
+}
+
+/* impressão / exportar PDF */
+@media print{
+  body{background:#fff}
+  .cover{clip-path:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .invest,footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .btn{display:none}
+  section{padding:40px 0 0;break-inside:avoid}
+  .accept{break-inside:avoid}
+  a[href]::after{content:""}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo-mark" viewBox="0 0 325 267">
+    <g transform="translate(0,267) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+      <path d="M2014 1996 c-10 -26 4 -48 28 -44 17 2 23 10 23 28 0 18 -6 26 -23 28 -13 2 -25 -3 -28 -12z"/>
+      <path d="M1190 1892 c-19 -9 -45 -32 -57 -51 -22 -33 -23 -40 -23 -293 0 -217 3 -263 15 -282 52 -79 189 -41 224 63 16 48 14 475 -3 521 -21 59 -88 77 -156 42z m74 -74 c13 -19 16 -59 16 -243 0 -229 -6 -266 -43 -273 -44 -9 -47 7 -47 257 0 198 3 240 16 259 8 12 21 22 29 22 8 0 21 -10 29 -22z"/>
+      <path d="M2017 1893 c-4 -3 -7 -118 -7 -255 l0 -249 28 3 27 3 3 253 2 252 -23 0 c-13 0 -27 -3 -30 -7z"/>
+      <path d="M1905 1872 c-11 -7 -22 -61 -46 -212 -12 -74 -12 -74 -25 -45 -7 17 -21 76 -31 133 l-18 102 -37 0 -38 0 0 -255 c0 -239 1 -255 18 -255 35 0 42 21 42 123 0 63 4 96 10 92 6 -3 10 -16 10 -28 0 -12 5 -38 10 -58 9 -32 13 -35 38 -31 24 3 29 10 40 56 7 28 12 63 13 76 l1 25 8 -25 c4 -14 8 -65 9 -114 1 -87 1 -88 24 -82 12 3 25 6 30 6 4 0 7 113 7 250 l0 250 -27 0 c-16 0 -33 -4 -38 -8z"/>
+      <path d="M1623 1829 c-23 -8 -23 -8 -23 -253 0 -135 3 -247 8 -249 4 -3 17 -1 30 4 22 8 22 8 22 253 0 135 -3 247 -7 249 -5 3 -18 1 -30 -4z"/>
+      <path d="M1455 1806 c-54 -10 -60 -14 -60 -36 0 -19 5 -25 20 -23 11 1 23 -4 27 -10 4 -7 8 -108 8 -224 0 -117 3 -213 8 -213 4 0 17 3 30 6 22 6 22 7 22 229 l0 222 26 12 c30 13 29 45 -1 47 -11 1 -47 -3 -80 -10z"/>
+      <path d="M980 1721 c0 -70 6 -81 46 -81 l34 0 0 54 c0 60 -20 91 -39 59 -10 -17 -10 -17 -11 0 0 9 -7 17 -15 17 -11 0 -15 -12 -15 -49z"/>
+      <path d="M2313 1368 c-6 -14 -7 -55 -2 -103 4 -44 8 -108 8 -143 1 -78 23 -82 32 -6 3 27 12 91 18 141 7 51 10 102 6 113 -9 28 -49 26 -62 -2z"/>
+      <path d="M2163 1360 c-23 -9 -23 -10 -23 -246 l0 -237 42 7 c51 8 58 12 58 37 0 12 -7 19 -20 19 -18 0 -20 7 -20 83 0 71 3 84 20 95 11 7 20 21 20 32 0 13 -7 20 -20 20 -18 0 -20 7 -20 70 0 59 3 71 20 80 11 6 20 20 20 30 0 15 -7 20 -27 19 -16 0 -38 -4 -50 -9z"/>
+      <path d="M1969 1317 c-65 -56 -60 -129 18 -229 24 -32 48 -72 53 -88 11 -38 -2 -84 -25 -88 -23 -5 -35 14 -35 56 0 36 1 36 -36 22 -24 -9 -26 -14 -21 -46 10 -60 32 -84 77 -84 60 0 92 33 98 102 5 62 -13 106 -71 176 -41 48 -52 87 -38 125 20 52 61 18 61 -49 0 -21 4 -25 23 -22 19 3 22 10 25 49 6 87 -67 130 -129 76z"/>
+      <path d="M1773 1295 c-49 -21 -66 -55 -61 -120 4 -47 12 -64 52 -116 56 -72 69 -103 61 -145 -5 -31 -28 -50 -45 -39 -5 3 -11 23 -15 45 -6 34 -10 40 -31 40 -24 0 -25 -3 -22 -51 2 -43 8 -56 30 -72 24 -18 32 -19 67 -9 29 9 43 21 55 46 33 70 15 143 -54 226 -34 40 -40 55 -40 93 0 78 47 85 57 8 5 -35 9 -41 29 -41 22 0 24 4 24 49 0 78 -44 113 -107 86z"/>
+      <path d="M1598 1273 c-14 -2 -28 -10 -30 -16 -1 -7 -2 -114 0 -239 3 -228 3 -228 25 -228 45 0 67 12 67 35 0 14 -7 25 -20 28 -18 5 -20 14 -20 85 0 72 2 81 20 87 11 4 20 15 20 27 0 11 -8 22 -20 25 -18 5 -20 14 -20 75 0 61 2 71 20 75 13 3 20 14 20 29 0 25 -4 26 -62 17z"/>
+      <path d="M1410 1253 c-86 -15 -100 -23 -100 -57 0 -17 6 -18 60 -13 53 6 60 5 60 -11 0 -9 -29 -133 -65 -276 -36 -142 -64 -260 -62 -263 2 -2 50 4 106 13 99 17 101 18 101 44 0 15 -2 29 -5 32 -3 3 -28 1 -56 -4 -28 -5 -53 -8 -55 -5 -2 2 25 120 61 263 36 142 67 267 69 277 5 20 0 20 -114 0z"/>
+      <path d="M2310 975 c-18 -22 -8 -50 19 -50 32 0 49 28 32 49 -17 20 -35 20 -51 1z"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- ══════════ CAPA ══════════ -->
+<header class="cover">
+  <svg class="cover-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
+  <div class="wrap">
+    <div class="cover-head">
+      <span class="logo"><svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>Otimi<span class="zc">Z</span>esse</span>
+      <div class="prop-meta">
+        <!-- EDITAR: número e data da proposta -->
+        Proposta Nº 2026-001<br>28 · 07 · 2026
+      </div>
+    </div>
+    <span class="eyebrow">Proposta comercial · Marketing digital</span>
+    <!-- EDITAR: nome do cliente -->
+    <h1>Plano de crescimento digital para<br><span class="hl">Nome do Cliente</span></h1>
+    <div class="cover-sub">
+      <!-- EDITAR: dados do destinatário -->
+      <div><b>Preparada para</b>Nome do responsável</div>
+      <div><b>Empresa</b>Nome do Cliente Ltda</div>
+      <div><b>Elaborada por</b>Equipe OtimiZesse</div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ DIAGNÓSTICO ══════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">01 · Diagnóstico</span>
+      <h2>Onde sua presença digital <em>está deixando dinheiro na mesa</em></h2>
+    </div>
+    <!-- EDITAR: diagnóstico específico do cliente. Seja concreto:
+         cite o Instagram dele, o site dele, os concorrentes dele.
+         Proposta genérica não fecha contrato. -->
+    <p class="lead">Analisamos a presença digital atual da [Nome do Cliente] e identificamos três pontos de atenção: (1) a empresa não aparece nas buscas do Google para os termos que os clientes usam; (2) as redes sociais publicam sem frequência e sem estratégia de conversão; (3) não existe medição, ou seja, hoje é impossível saber de onde vêm os clientes e o que está funcionando.</p>
+  </div>
+</section>
+
+<!-- ══════════ ESCOPO ══════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">02 · Escopo do trabalho</span>
+      <h2>O que vamos <em>executar</em></h2>
+    </div>
+    <!-- EDITAR: mantenha só os cards dos serviços contratados; apague os demais -->
+    <div class="scope">
+      <div class="scope-card">
+        <h3>Gestão de redes sociais</h3>
+        <ul>
+          <li>Planejamento editorial mensal</li>
+          <li>12 publicações + stories semanais</li>
+          <li>Produção de conteúdo e design</li>
+          <li>Impulsionamento estratégico</li>
+        </ul>
+      </div>
+      <div class="scope-card">
+        <h3>Marketing no Google</h3>
+        <ul>
+          <li>Configuração e gestão de Google Ads</li>
+          <li>Otimização do Perfil da Empresa</li>
+          <li>SEO local para Juiz de Fora</li>
+        </ul>
+      </div>
+      <div class="scope-card">
+        <h3>Site institucional</h3>
+        <ul>
+          <li>Design sob medida, responsivo</li>
+          <li>Otimizado para conversão via WhatsApp</li>
+          <li>SEO técnico incluso</li>
+        </ul>
+      </div>
+      <div class="scope-card">
+        <h3>Relatório mensal</h3>
+        <ul>
+          <li>Origem dos contatos e acessos</li>
+          <li>O que performou e o que será ajustado</li>
+          <li>Reunião mensal de alinhamento</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CRONOGRAMA ══════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">03 · Cronograma</span>
+      <h2>Primeiros 90 dias</h2>
+    </div>
+    <!-- EDITAR: ajuste fases e prazos ao escopo real -->
+    <div class="timeline">
+      <div class="t-row"><b>Semana 1–2</b><div><h3>Imersão e setup</h3><p>Reunião de diagnóstico, acesso às contas, definição de identidade e calendário editorial.</p></div></div>
+      <div class="t-row"><b>Semana 3–4</b><div><h3>Lançamento</h3><p>Início das publicações, campanhas no ar e site em produção.</p></div></div>
+      <div class="t-row"><b>Mês 2</b><div><h3>Operação plena</h3><p>Ritmo completo de conteúdo, otimização das campanhas com base nos primeiros dados.</p></div></div>
+      <div class="t-row"><b>Mês 3</b><div><h3>Primeiro ciclo de resultados</h3><p>Relatório consolidado do trimestre e replanejamento do próximo ciclo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ INVESTIMENTO ══════════ -->
+<section>
+  <div class="wrap">
+    <div class="invest">
+      <h2>Investimento</h2>
+      <!-- EDITAR: valores reais. Linha "Setup" é cobrança única; demais são mensais -->
+      <table class="inv-table">
+        <thead><tr><th>Item</th><th>Recorrência</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Setup inicial (imersão + identidade + configurações)</td><td>Única</td><td>R$ 0.000,00</td></tr>
+          <tr><td>Gestão de redes sociais</td><td>Mensal</td><td>R$ 0.000,00</td></tr>
+          <tr><td>Gestão de Google Ads</td><td>Mensal</td><td>R$ 0.000,00</td></tr>
+          <tr><td>Site institucional</td><td>Única</td><td>R$ 0.000,00</td></tr>
+          <tr class="total"><td>Total mensal recorrente</td><td></td><td>R$ 0.000,00</td></tr>
+        </tbody>
+      </table>
+      <p class="inv-note">Verba de mídia (valor investido diretamente nos anúncios) não inclusa e definida em conjunto. Valores válidos conforme prazo desta proposta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONDIÇÕES ══════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">04 · Condições</span>
+      <h2>Regras claras, <em>sem letra miúda</em></h2>
+    </div>
+    <!-- EDITAR: condições reais do contrato -->
+    <div class="terms">
+      <div class="term"><b>Contrato mínimo</b><span>3 meses, renovação automática</span></div>
+      <div class="term"><b>Pagamento</b><span>Boleto ou Pix, todo dia 05</span></div>
+      <div class="term"><b>Cancelamento</b><span>Aviso prévio de 30 dias</span></div>
+      <div class="term"><b>Propriedade</b><span>Todo material produzido é do cliente</span></div>
+    </div>
+
+    <div class="accept">
+      <h2>Vamos otimi<span class="zc">z</span>ar?</h2>
+      <p>Para aceitar esta proposta ou ajustar qualquer ponto do escopo, é só chamar. Respondemos no mesmo dia útil.</p>
+      <!-- EDITAR: personalize o texto da mensagem com o nome do cliente -->
+      <a class="btn" href="https://wa.me/5532984943333?text=Olá! Recebi a proposta e quero avançar." target="_blank" rel="noopener">Aceitar pelo WhatsApp</a>
+      <!-- EDITAR: validade -->
+      <p class="validity">Proposta válida por 15 dias a partir da data de emissão</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>OtimiZesse · Juiz de Fora, MG</span>
+    <span>+55 32 98494-3333 · @otimizesse</span>
+  </div>
+</footer>
+
+</body>
+</html>
