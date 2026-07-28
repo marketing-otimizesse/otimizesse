@@ -1,543 +1,689 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XLDPSV9XX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OtimiZesse — Marketing que se mede</title>
+<meta name="description" content="Agência digital em Juiz de Fora. Google, sites, redes sociais e marca. Sem promessa vaga: estratégia, execução e relatório todo mês.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0D0F1E;
+  --ink-2:#161930;
+  --paper:#F3F4F8;
+  --paper-2:#E9EBF2;
+  --violet:#584DFF;
+  --violet-deep:#3B32C9;
+  --lilac:#C9C6FF;
+  --line:rgba(13,15,30,.14);
+  --line-light:rgba(243,244,248,.16);
+  --z-angle:14deg;
+  --radius:20px;
+  --font-display:'Syne',sans-serif;
+  --font-body:'Instrument Sans',sans-serif;
+  --font-mono:'Space Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--violet);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 
-  gtag('config', 'G-5XLDPSV9XX');
-</script>
-    <title>OtimiZesse</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Marketing Digital gestão de redes sociais e muito mais 😎" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="geo.region" content="BR-MG" />
-    <meta name="geo.placename" content="Juiz de Fora" />
-    <meta name="author" content="OtimiZesse">
-    <meta name="keywords" content="OtimiZesse, website, site, otimize, marketing">
-    <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="vendors/owl-carousel/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="vendors/owl-carousel/css/owl.theme.default.css" />
-    <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="vendors/aos/css/aos.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/rootstyle.css?version=1" />
-    <link rel="icon" href="images/oz-favicon.ico" type="image/ico" sizes="32x32">
+/* ---------- eyebrow / labels ---------- */
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  gap:.6em;
+}
+.eyebrow::before{
+  content:"";
+  width:22px;height:2px;
+  background:var(--violet);
+  transform:skewX(calc(var(--z-angle) * -1));
+}
+
+/* ---------- nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  transition:background .3s,box-shadow .3s,transform .3s;
+}
+.nav.scrolled{
+  background:rgba(243,244,248,.86);
+  backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 var(--line);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 24px;max-width:1240px;margin:0 auto;
+}
+.logo{
+  font-family:var(--font-display);
+  font-weight:800;font-size:1.28rem;letter-spacing:-.01em;
+}
+.logo .z{
+  color:var(--violet);
+  display:inline-block;
+  transform:skewX(calc(var(--z-angle) * -1));
+}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{
+  font-size:.92rem;font-weight:500;position:relative;
+}
+.nav-links a:not(.btn)::after{
+  content:"";position:absolute;left:0;bottom:-5px;height:2px;width:0;
+  background:var(--violet);transition:width .25s;
+  transform:skewX(calc(var(--z-angle) * -1));
+}
+.nav-links a:not(.btn):hover::after{width:100%}
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;
+  font-family:var(--font-body);font-weight:600;font-size:.95rem;
+  padding:13px 26px;
+  background:var(--ink);color:var(--paper);
+  clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);
+  transition:background .25s,transform .2s;
+  border:none;cursor:pointer;
+}
+.btn:hover{background:var(--violet);transform:translateY(-2px)}
+.btn.solid-violet{background:var(--violet);color:#fff}
+.btn.solid-violet:hover{background:var(--violet-deep)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+.btn.on-dark.ghost{color:var(--paper);box-shadow:inset 0 0 0 1.5px rgba(243,244,248,.5)}
+.btn.on-dark.ghost:hover{background:var(--paper);color:var(--ink)}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.menu-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;
+  padding-top:110px;
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 75%);
+}
+.hero .eyebrow{margin-bottom:28px}
+.hero h1{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:clamp(3rem,10.5vw,8.6rem);
+  line-height:.94;
+  letter-spacing:-.03em;
+  text-transform:uppercase;
+}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:inline-block;transform:translateY(110%);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1 .line:nth-child(2) span{animation-delay:.12s}
+@keyframes rise{to{transform:translateY(0)}}
+.hero h1 .z-big{
+  color:var(--violet);
+  display:inline-block;
+  transform:skewX(calc(var(--z-angle) * -1));
+}
+.hero h1 .strike{
+  position:relative;color:rgba(13,15,30,.32);
+}
+.hero h1 .strike::after{
+  content:"";position:absolute;left:-2%;top:52%;width:0;height:.075em;
+  background:var(--violet);
+  transform:rotate(calc(var(--z-angle) * -.35));
+  animation:strike .5s .8s cubic-bezier(.6,0,.2,1) forwards;
+}
+@keyframes strike{to{width:104%}}
+.hero-sub{
+  display:flex;flex-wrap:wrap;gap:40px;align-items:flex-end;
+  margin-top:44px;justify-content:space-between;
+}
+.hero-sub p{max-width:46ch;font-size:1.12rem;color:rgba(13,15,30,.75)}
+.hero-sub p strong{color:var(--ink)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-foot{
+  margin-top:auto;padding:34px 0 26px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(13,15,30,.55);
+}
+.hero-foot .scroll-hint{display:inline-flex;align-items:center;gap:.6em}
+.hero-foot .scroll-hint::after{
+  content:"";width:1.5px;height:26px;background:var(--ink);
+  transform:skewX(calc(var(--z-angle) * -1));
+  animation:pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
+
+/* ---------- marquee ---------- */
+.marquee-band{
+  background:var(--ink);color:var(--paper);
+  padding:22px 0;overflow:hidden;
+  transform:rotate(calc(var(--z-angle) * -.12));
+  scale:1.03;
+}
+.marquee{display:flex;width:max-content;animation:scroll 26s linear infinite;gap:0}
+.marquee-band:hover .marquee{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marquee span{
+  font-family:var(--font-display);font-weight:600;font-size:1.05rem;
+  white-space:nowrap;padding:0 34px;position:relative;
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.marquee span::after{
+  content:"";position:absolute;right:-3px;top:50%;translate:0 -50%;
+  width:7px;height:14px;background:var(--violet);
+  transform:skewX(calc(var(--z-angle) * -1));
+}
+
+/* ---------- sections ---------- */
+section{padding:120px 0}
+.sec-head{margin-bottom:64px;max-width:760px}
+.sec-head h2{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(2rem,4.6vw,3.4rem);
+  line-height:1.05;letter-spacing:-.02em;
+  margin-top:18px;
+}
+.sec-head h2 em{font-style:normal;color:var(--violet)}
+.sec-head p{margin-top:18px;font-size:1.08rem;color:rgba(13,15,30,.72);max-width:56ch}
+
+/* ---------- serviços (rows interativas) ---------- */
+.svc{border-top:1.5px solid var(--line)}
+.svc-row{
+  display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:center;
+  padding:34px 8px;border-bottom:1.5px solid var(--line);
+  cursor:pointer;position:relative;overflow:hidden;
+  transition:padding-left .35s cubic-bezier(.2,.7,.2,1);
+}
+.svc-row::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:0;
+  background:var(--violet);
+  transition:width .35s cubic-bezier(.2,.7,.2,1);
+  transform:skewX(calc(var(--z-angle) * -1));
+  transform-origin:top left;
+}
+.svc-row:hover{padding-left:22px}
+.svc-row:hover::before{width:8px}
+.svc-tag{
+  font-family:var(--font-mono);font-size:.72rem;color:rgba(13,15,30,.5);
+  letter-spacing:.1em;
+}
+.svc-row h3{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(1.3rem,2.6vw,1.9rem);letter-spacing:-.01em;
+  transition:color .25s;
+}
+.svc-row:hover h3{color:var(--violet)}
+.svc-arrow{
+  font-family:var(--font-display);font-weight:700;font-size:1.4rem;
+  transition:transform .3s;
+}
+.svc-row:hover .svc-arrow{transform:translateX(6px) rotate(-14deg)}
+.svc-body{
+  grid-column:2 / -1;
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height .45s cubic-bezier(.2,.7,.2,1),opacity .35s,margin .35s;
+}
+.svc-row.open .svc-body{max-height:260px;opacity:1;margin-top:6px}
+.svc-body p{max-width:62ch;color:rgba(13,15,30,.75)}
+.svc-body ul{
+  list-style:none;margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;
+}
+.svc-body li{
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;
+  padding:7px 14px;
+  background:var(--paper-2);
+  clip-path:polygon(7px 0,100% 0,calc(100% - 7px) 100%,0 100%);
+}
+
+/* ---------- método (dark, corte diagonal) ---------- */
+.dark-band{
+  background:var(--ink);color:var(--paper);
+  clip-path:polygon(0 4.2vw,100% 0,100% calc(100% - 4.2vw),0 100%);
+  padding:calc(120px + 4.2vw) 0;
+  position:relative;
+}
+.dark-band .eyebrow{color:var(--lilac)}
+.dark-band .sec-head h2{color:var(--paper)}
+.dark-band .sec-head p{color:rgba(243,244,248,.66)}
+.steps{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;
+  background:var(--line-light);
+  border:1.5px solid var(--line-light);
+}
+.step{
+  background:var(--ink);padding:44px 34px;
+  position:relative;transition:background .3s;
+}
+.step:hover{background:var(--ink-2)}
+.step-num{
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;
+  color:var(--lilac);
+}
+.step h3{
+  font-family:var(--font-display);font-weight:700;font-size:1.32rem;
+  margin:16px 0 12px;
+}
+.step p{color:rgba(243,244,248,.66);font-size:.98rem}
+.step::after{
+  content:"";position:absolute;top:34px;right:30px;
+  width:10px;height:20px;background:var(--violet);
+  transform:skewX(calc(var(--z-angle) * -1));
+  opacity:.9;
+}
+.truth{
+  margin-top:72px;
+  display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between;align-items:center;
+  border:1.5px solid var(--line-light);
+  padding:38px 40px;
+}
+.truth p{
+  font-family:var(--font-display);font-weight:600;
+  font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:1.35;
+  max-width:34ch;
+}
+.truth p em{font-style:normal;color:var(--lilac)}
+
+/* ---------- clientes ---------- */
+.clients{background:var(--paper)}
+.client-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
+}
+.client-card{
+  border:1.5px solid var(--line);
+  padding:36px 34px;
+  display:flex;flex-direction:column;gap:10px;
+  position:relative;overflow:hidden;
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+  background:#fff;
+}
+.client-card::before{
+  content:"";position:absolute;top:0;right:0;
+  width:40px;height:100%;
+  background:linear-gradient(transparent,transparent);
+}
+.client-card::after{
+  content:"";position:absolute;top:-30%;right:-16px;
+  width:34px;height:160%;
+  background:var(--violet);
+  transform:skewX(calc(var(--z-angle) * -1));
+  opacity:0;transition:opacity .3s,right .3s;
+}
+.client-card:hover{transform:translateY(-4px);border-color:var(--ink);box-shadow:0 18px 40px -22px rgba(13,15,30,.35)}
+.client-card:hover::after{opacity:1;right:-8px}
+.client-sector{
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(13,15,30,.5);
+}
+.client-card h3{
+  font-family:var(--font-display);font-weight:700;font-size:1.5rem;letter-spacing:-.01em;
+}
+.client-card p{color:rgba(13,15,30,.72);font-size:.98rem;max-width:44ch}
+.client-card .visit{
+  margin-top:auto;padding-top:18px;
+  font-weight:600;font-size:.9rem;
+  display:inline-flex;align-items:center;gap:.5em;color:var(--violet-deep);
+}
+.client-card .visit::after{content:"↗";transition:transform .25s}
+.client-card:hover .visit::after{transform:translate(3px,-3px)}
+.client-card.wide{grid-column:1 / -1;flex-direction:row;align-items:center;justify-content:space-between;gap:30px}
+.client-card.wide .cc-left{display:flex;flex-direction:column;gap:10px}
+
+/* ---------- CTA final ---------- */
+.cta-final{padding:140px 0 120px;text-align:left}
+.cta-final h2{
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(2.6rem,7.5vw,5.6rem);
+  line-height:.98;letter-spacing:-.03em;text-transform:uppercase;
+}
+.cta-final h2 .z{color:var(--violet);display:inline-block;transform:skewX(calc(var(--z-angle) * -1))}
+.cta-final p{margin:26px 0 38px;font-size:1.12rem;color:rgba(13,15,30,.72);max-width:52ch}
+.cta-actions{display:flex;gap:14px;flex-wrap:wrap}
+.wa-note{
+  margin-top:18px;font-family:var(--font-mono);font-size:.72rem;
+  letter-spacing:.1em;color:rgba(13,15,30,.5);text-transform:uppercase;
+}
+
+/* ---------- footer ---------- */
+footer{
+  background:var(--ink);color:var(--paper);
+  padding:70px 0 36px;
+}
+.foot-top{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:36px;
+  padding-bottom:44px;border-bottom:1px solid var(--line-light);
+}
+.foot-top .logo{font-size:1.5rem}
+.foot-col h4{
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(243,244,248,.5);margin-bottom:16px;font-weight:400;
+}
+.foot-col a{display:block;margin-bottom:10px;font-size:.95rem;opacity:.85;transition:opacity .2s,color .2s}
+.foot-col a:hover{opacity:1;color:var(--lilac)}
+.foot-bottom{
+  padding-top:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;
+  color:rgba(243,244,248,.45);text-transform:uppercase;
+}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- whatsapp flutuante ---------- */
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:90;
+  width:56px;height:56px;border-radius:50%;
+  background:#22C55E;display:grid;place-items:center;
+  box-shadow:0 12px 30px -8px rgba(34,197,94,.55);
+  transition:transform .25s;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* ---------- responsivo ---------- */
+@media (max-width:900px){
+  .steps{grid-template-columns:1fr}
+  .client-grid{grid-template-columns:1fr}
+  .client-card.wide{flex-direction:column;align-items:flex-start}
+  section{padding:88px 0}
+}
+@media (max-width:760px){
+  .nav-links{
+    position:fixed;inset:0;background:var(--paper);
+    flex-direction:column;justify-content:center;gap:34px;
+    transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav-links.open{transform:none}
+  .nav-links a{font-size:1.4rem;font-family:var(--font-display);font-weight:600}
+  .menu-toggle{display:block;z-index:110;position:relative}
+  .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-toggle.open span:nth-child(2){opacity:0}
+  .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .svc-row{grid-template-columns:1fr auto}
+  .svc-tag{display:none}
+  .svc-body{grid-column:1 / -1}
+  .hero-foot{flex-direction:column;align-items:flex-start;gap:14px}
+  .truth{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .hero h1 .line span{transform:none}
+  .hero h1 .strike::after{width:104%}
+  .reveal{opacity:1;transform:none}
+}
+</style>
 </head>
+<body>
 
-<body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
-    <header id="header-section">
-        <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
-            <div class="container">
-                <div class="navbar-brand-wrapper d-flex w-100">
-                    <img src="images/logo-otimizisse-1.png" alt="Logo OtimiZesse" class="ui-logo" />
-                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="mdi mdi-menu navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse navbar-menu-wrapper" id="navbarSupportedContent">
-                    <ul class="navbar-nav align-items-lg-center align-items-start ml-auto">
-                        <li class="d-flex align-items-center justify-content-between pl-4 pl-lg-0">
-                            <div class="navbar-collapse-logo">
-                                <img src="images/logo-otimizisse-1.png" alt="Logo OtimiZesse" class="ui-logo" />
-                            </div>
-                            <button class="navbar-toggler close-button" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#header-section">Início <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#features-section">Sobre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#digital-marketing-section">Especialidades</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#case-studies-section">Serviços</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#feedback-section">Clientes</a>
-                        </li>
-
-                        <li class="nav-item btn-contact-us pl-4 pl-lg-0">
-                            <form action="https://wa.me/5532984943333">
-                                <button class="btn btn-info">
-                                    Fale conosco!
-                                </button>
-                            </form>
-                        </li>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="banner">
-        <div class="container">
-            <h1 class="font-weight-semibold">
-                Marketing Digital<br /> gestão de redes sociais e muito mais 😎
-            </h1>
-            <h6 class="font-weight-normal text-muted pb-3">
-                Pensamos em soluções simples e criativas para otimizar o seu negócio
-            </h6>
-
-            <img src="images/Group171.svg" alt="" class="img-fluid" />
-        </div>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">Otimi<span class="z">Z</span>esse</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#servicos">Serviços</a>
+      <a href="#metodo">Método</a>
+      <a href="#clientes">Clientes</a>
+      <a class="btn solid-violet" href="https://wa.me/5532984943333?text=Olá, quero conversar sobre um projeto." target="_blank" rel="noopener">Começar um projeto</a>
     </div>
-    <div class="content-wrapper">
-        <div class="container">
-            <section class="features-overview" id="features-section">
-                <div class="content-header">
-                    <h2>Como funciona</h2>
-                    <h6 class="section-subtitle text-muted">
-                        Não tem tempo para gerenciar suas redes sociais e produzir conteúdo?<br />Deixe em nossas mãos
-                        que realizamos o trabalho duro para você! Pensamos no conforto dos nossos
-                        clientes.
-                    </h6>
-                </div>
-                <div class="d-md-flex justify-content-between">
-                    <div class="grid-margin d-flex justify-content-start">
-                        <div class="features-width">
-                            <img src="images/Group12.svg" alt="" class="img-icons" />
-                            <h5 class="py-3">Negócio <br />nas alturas</h5>
-                            <p class="text-muted">
-                                Que tal mostrar para o mundo o seu empreendimento? Nós podemos fazer o seu negócio
-                                alcançar patamares surpreendentes!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="grid-margin d-flex justify-content-center">
-                        <div class="features-width">
-                            <img src="images/Group7.svg" alt="" class="img-icons" />
-                            <h5 class="py-3">Relatórios <br />de acesso</h5>
-                            <p class="text-muted">
-                                De onde vem os seus clientes? O que eles precisam? Qual a evolução em relação ao número
-                                de acessos em suas plataformas digitais?<br>Essas perguntas agora tem respostas!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="grid-margin d-flex justify-content-end">
-                        <div class="features-width">
-                            <img src="images/Group5.svg" alt="" class="img-icons" />
-                            <h5 class="py-3">Marketing<br />de conteúdo</h5>
-                            <p class="text-muted">
-                                Trabalhamos com uma equipe preparada para gerar todo tipo
-                                de conteúdo digital que o seu empreendimento precisa!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="digital-marketing-service" id="digital-marketing-section">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-7 grid-margin grid-margin-lg-0" data-aos="fade-right">
-                        <h3 class="m-0">
-                            Oferecemos uma gama completa<br />de serviços de marketing
-                            digital!
-                        </h3>
-                        <div class="col-lg-7 col-xl-6 p-0">
-                            <p class="py-4 m-0 text-muted">
-                                Nossa equipe está a disposição para tirar suas dúvidas.
-                            </p>
-                            <p class="font-weight-medium text-muted">
-                                Que tal entrar em contato para conhecer um pouco mais sobre nós?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-5 p-0 img-digital grid-margin grid-margin-lg-0" data-aos="fade-left">
-                        <img src="images/Group1.png" alt="" class="img-fluid" />
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-7 text-center flex-item grid-margin" data-aos="fade-right">
-                        <img src="images/Group2.png" alt="" class="img-fluid" />
-                    </div>
-                    <div class="col-12 col-lg-5 flex-item grid-margin" data-aos="fade-left">
-                        <h3 class="m-0">
-                            Agência digital especializada<br />em soluções para negócios.
-                        </h3>
-                        <div class="col-lg-9 col-xl-8 p-0">
-                            <p class="py-4 m-0 text-muted">
-                                Trabalhamos com recursos impressionantes para fornecer o melhor desempenho em todas as
-                                circunstâncias para o seu empreendimento.
-                            </p>
+  </div>
+</nav>
 
-                        </div>
-                        <form action="https://wa.me/5532984943333">
-
-                            <button class="btn btn-info">Consulte mais informações</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <section class="case-studies" id="case-studies-section">
-                <div class="row grid-margin justify-content-center">
-                    <div class="col-12 text-center pb-5">
-                        <h2>Nossos serviços</h2>
-                        <h6 class="section-subtitle text-muted">
-                            Desenvolvidos com amor por nós!
-                        </h6>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in">
-                        <div class="card color-cards">
-                            <div class="card-body p-0">
-                                <div class="bg-primary text-center card-contents">
-                                    <div class="card-image">
-                                        <img src="images/Group95.svg" class="case-studies-card-img" alt="" />
-                                    </div>
-                                    <div class="card-desc-box d-flex align-items-center justify-content-around">
-                                        <div>
-                                            <h6 class="text-white pb-2 px-3">
-                                                Ajudamos a sua empresa a ter uma presença digital que certamente
-                                                viabiliza você a conquistar posições de destaque
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-details text-center pt-4">
-                                    <h6 class="m-0 pb-1">Marketing no Google</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <div class="card color-cards">
-                            <div class="card-body p-0">
-                                <div class="bg-warning text-center card-contents">
-                                    <div class="card-image">
-                                        <img src="images/Group108.svg" class="case-studies-card-img" alt="" />
-                                    </div>
-                                    <div class="card-desc-box d-flex align-items-center justify-content-around">
-                                        <div>
-                                            <h6 class="text-white pb-2 px-3">
-                                                Criação e otimização de páginas empresariais com design simples e
-                                                objetivo, boa navegabilidade, conteúdo relevante e responsivo, com
-                                                visibilidade
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-details text-center pt-4">
-                                    <h6 class="m-0 pb-1">Site institucional</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in"
-                        data-aos-delay="400">
-                        <div class="card color-cards">
-                            <div class="card-body p-0">
-                                <div class="bg-violet text-center card-contents">
-                                    <div class="card-image">
-                                        <img src="images/Group126.svg" class="case-studies-card-img" alt="" />
-                                    </div>
-                                    <div class="card-desc-box d-flex align-items-center justify-content-around">
-                                        <div>
-                                            <h6 class="text-white pb-2 px-3">
-                                                Pacotes prata, ouro e diamante, combo de impulsionamentos e de novos
-                                                seguidores
-
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-details text-center pt-4">
-                                    <h6 class="m-0 pb-1">
-                                        Gestão de redes sociais</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-3 stretch-card" data-aos="zoom-in" data-aos-delay="600">
-                        <div class="card color-cards">
-                            <div class="card-body p-0">
-                                <div class="bg-success text-center card-contents">
-                                    <div class="card-image">
-                                        <img src="images/Group115.svg" class="case-studies-card-img" alt="" />
-                                    </div>
-                                    <div class="card-desc-box d-flex align-items-center justify-content-around">
-                                        <div>
-                                            <h6 class="text-white pb-2 px-3">
-                                                Criamos a identidade visual da sua empresa como você sempre sonhou
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-details text-center pt-4">
-                                    <h6 class="m-0 pb-1">Formação da sua marca</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </section>
-            <section class="customer-feedback" id="feedback-section">
-                <div class="row">
-                    <div class="col-12 text-center pb-5">
-                        <h2>Nossos clientes</h2>
-                        <h6 class="section-subtitle text-muted m-0">
-                            Somos gratos por cada um de nossos clientes e cuidamos muito bem dessa relação!
-                        </h6>
-                    </div>
-                    <div class="owl-carousel owl-theme grid-margin">
-                        <div class="card customer-cards">
-                            <div class="card-body text-center">
-                                <a href="https://smarti9-tech.github.io/smarti9-site/" target="_blank">
-                                    <img src="images/clientes/smarti9.png" alt="Smarti9" class="img-customer" />
-                                </a>
-                                <p class="m-0 py-3 text-muted"></p>
-                                <div class="content-divider m-auto"></div>
-                                <h6 class="card-title pt-3">Smarti9</h6>
-                                <h6 class="customer-designation text-muted m-0">Fábrica de softwares e aplicativos
-                                    inovadores</h6>
-                            </div>
-                        </div>
-                    
-                        <!-- <div class="card customer-cards">
-                            <div class="card-body text-center">
-                                <a href="https://luacouto.com.br/" target="_blank">
-                                    <img src="images/clientes/luacouto.png" alt="Lua Couto" class="img-customer" />
-                                </a>
-                                <p class="m-0 py-3 text-muted"></p>
-                                <div class="content-divider m-auto"></div>
-                                <h6 class="card-title pt-3">Lua Couto</h6>
-                                <h6 class="customer-designation text-muted m-0">A maior e mais linda modelo Brasileira
-                                </h6>
-                            </div>
-                        </div> -->
-                        
-                        <div class="card customer-cards">
-                            <div class="card-body text-center">
-                                <a href="https://www.instagram.com/endogastrojf/"
-                                    target="_blank">
-                                    <img src="images/clientes/endogastrojf.png" alt="EndogastroJF"
-                                        class="img-customer" />
-                                </a>
-
-                                <p class="m-0 py-3 text-muted"></p>
-                                <div class="content-divider m-auto"></div>
-                                <h6 class="card-title pt-3">EndogastroJF</h6>
-                                <h6 class="customer-designation text-muted m-0">Gastroenterologia e Endoscopia</h6>
-                            </div>
-                        </div>
-
-                        <div class="card customer-cards">
-                            <div class="card-body text-center">
-                                <a href="https://endogastrodiipro.com.br/"
-                                    target="_blank">
-                                    <img src="images/clientes/endogastrodiipro.png" alt="EndogastroJF"
-                                        class="img-customer" />
-                                </a>
-
-                                <p class="m-0 py-3 text-muted"></p>
-                                <div class="content-divider m-auto"></div>
-                                <h6 class="card-title pt-3">EndogastroDIIPRO</h6>
-                                <h6 class="customer-designation text-muted m-0">O melhor curso de Gastroenterologia e DII do Brasil</h6>
-                            </div>
-                        </div>
-
-                        <div class="card customer-cards">
-                            <div class="card-body text-center">
-                                <a href="https://www.agentzapia.com.br/"
-                                    target="_blank">
-                                    <img src="images/clientes/agentzapia.png" alt="AgentZapia"
-                                        class="img-customer" />
-                                </a>
-
-                                <p class="m-0 py-3 text-muted"></p>
-                                <div class="content-divider m-auto"></div>
-                                <h6 class="card-title pt-3">AgentZapIA</h6>
-                                <h6 class="customer-designation text-muted m-0">WhatsApp, Instagram, IA, tudo em um só lugar.</h6>
-                            </div>
-                        </div>
-
-                        <div class="card customer-cards">
-                            <div class="card-body text-center">
-                                <a href="https://www.planejesus.com.br/"
-                                    target="_blank">
-                                    <img src="images/clientes/planejesus.PNG" alt="PlanejeSUS"
-                                        class="img-customer" />
-                                </a>
-
-                                <p class="m-0 py-3 text-muted"></p>
-                                <div class="content-divider m-auto"></div>
-                                <h6 class="card-title pt-3">PlanejeSUS</h6>
-                                <h6 class="customer-designation text-muted m-0">A maior consultoria de saúde pública do Brasil </h6>
-                            </div>
-                        </div>
-                        <!--
-                        <div class="card customer-cards">
-                            <div class="card-body text-center">
-                                <a href="https://www.guybuffet.com.br/" target="_blank">
-                                    <img src="images/clientes/guybuffet.png" alt="Guy Buffet" class="img-customer" />
-                                </a>
-                                <p class="m-0 py-3 text-muted"></p>
-                                <div class="content-divider m-auto"></div>
-                                <h6 class="card-title pt-3">Guy Buffet</h6>
-                                <h6 class="customer-designation text-muted m-0">Experiência e conhecimento para oferecer
-                                    serviços com elevado padrão de qualidade para diversos tipos de eventos</h6>
-                            </div>
-                        </div>
-                        <div class="card customer-cards">
-                            <div class="card-body text-center">
-                                <a href="https://www.instagram.com/institutomaisvoceoficial/" target="_blank">
-                                    <img src="images/clientes/institutodeesteticamaisvoce.png" alt="Instituto de Estética Mais Você" class="img-customer" />
-                                </a>
-                                <p class="m-0 py-3 text-muted"></p>
-                                <div class="content-divider m-auto"></div>
-                                <h6 class="card-title pt-3">Instituto de Estética Mais Você</h6>
-                                <h6 class="customer-designation text-muted m-0">Estética Corporal e Facial e Emagrecimento Saudável
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="card customer-cards">
-                            <div class="card-body text-center">
-                                <img src="images/clientes/loteamentovillacabangu.png" alt="Loteamento Villa Cabangu"
-                                    class="img-customer" />
-                                <p class="m-0 py-3 text-muted"></p>
-                                <div class="content-divider m-auto"></div>
-                                <h6 class="card-title pt-3">Loteamento Villa Cabangu</h6>
-                                <h6 class="customer-designation text-muted m-0">Perfeito para morar, ideal para viver.
-                                    Barro nobre com infraestrutura completa</h6>
-                            </div>
-                        </div>
-                    -->
-                    </div>
-                </div>
-            </section>
-
-            <section class="contact-us" id="contact-section">
-                <div class="contact-us-bgimage grid-margin">
-                    <div class="pb-4">
-                        <h4 class="px-3 px-md-0 m-0" data-aos="fade-down">
-                            Você tem algum projeto?
-                        </h4>
-                        <h4 class="pt-1" data-aos="fade-down">Vem contar pra gente!</h4>
-                    </div>
-                    <div data-aos="fade-up">
-
-                        <form action="https://wa.me/5532984943333">
-                            <button class="btn btn-rounded btn-outline-danger">
-                        </form>
-                        Contate-nos
-                        </button>
-                    </div>
-                </div>
-            </section>
-            <section class="contact-details" id="contact-details-section">
-                <div class="row text-center text-md-left">
-                    <div class="col-12 col-md-6 col-lg-3 grid-margin">
-                        <h5 class="pb-2">Redes sociais</h5>
-                        <p class="text-muted">
-                            Siga-nos nas redes sociais e fique por dentro de todas as nossas ações </p>
-                        <div class="d-flex justify-content-center justify-content-md-start">
-                            <a href="https://wa.me/5532984943333"><span class="mdi mdi-whatsapp"></span></a>
-                            <a href="https://www.instagram.com/otimizesse/"><span class="mdi mdi-instagram"></span></a>
-                            <a href="https://www.linkedin.com/company/otimizesse/"><span class="mdi mdi-linkedin"></span></a>
-
-                            <!-- <a href="https://www.instagram.com/otimizesse/"><span
-                                    class="mdi mdi-github-circle"></span></a> -->
-                            <!-- <a href="https://www.twitter.com/otimiZesse/"><span class="mdi mdi-twitter"></span></a> -->
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-3 grid-margin">
-                        <h5 class="pb-2">Criado com...</h5>
-                        <a>
-                            <p class="m-0 pb-2">Amor</p>
-                        </a>
-                        <a>
-                            <p class="m-0 pt-1 pb-2">Dedicação</p>
-                        </a>
-                        <a>
-                            <p class="m-0 pt-1 pb-2">Profissionalismo</p>
-                        </a>
-                        <a>
-                            <p class="m-0 pt-1">Visão de mercado</p>
-                        </a>
-                    </div>
-                    <!--
-                    <div class="col-12 col-md-6 col-lg-3 grid-margin">
-                        <h5 class="pb-2">Endereço</h5>
-                        <p class="text-muted">
-                            Centro Comercial São Pedro
-                            <br />Rua José Lourenço Kelmer, 1300
-                            <br />CEP 36036-330
-                            <br />Loja 110 (Segundo Andar)
-                            <br />São Pedro, Juiz de Fora/MG
-                        </p>
-                    </div>
-                -->
-                </div>
-            </section>
-            <footer class="border-top">
-                <p class="text-center text-muted pt-4">
-                    Copyright ©
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> OtimiZesse.
-                </p>
-            </footer>
-            <!-- Modal for Contact - us Button -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="exampleModalLabel">Fale conosco</h4>
-                        </div>
-
-
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="Name">Name</label>
-                                    <input type="text" class="form-control" id="Name" placeholder="Name" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="Email">Email</label>
-                                    <input type="email" class="form-control" id="Email-1" placeholder="Email" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="Message">Message</label>
-                                    <textarea class="form-control" id="Message"
-                                        placeholder="Enter your Message"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light" data-dismiss="modal">
-                                Close
-                            </button>
-                            <button type="button" class="btn btn-success">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class='whatsapp-contact'>
-            <a href="https://wa.me/5532984943333?text=Olá, gostaria de conversar sobre um projeto.">
-                <img src='images/whatsapp-logo.png' alt='Whatsapp' />
-            </a>
-        </div>
+<header class="hero" id="top">
+  <div class="hero-grid"></div>
+  <div class="wrap">
+    <span class="eyebrow">Agência digital · Juiz de Fora → Brasil</span>
+    <h1>
+      <span class="line"><span><span class="strike">Divulgue-se.</span></span></span>
+      <span class="line"><span>Otimi<span class="z-big">Z</span>e-se.</span></span>
+    </h1>
+    <div class="hero-sub">
+      <p><strong>Postar não é estratégia.</strong> Construímos presença digital que gera demanda: Google, site, redes sociais e marca trabalhando juntos, com relatório do que funcionou e do que não funcionou.</p>
+      <div class="hero-ctas">
+        <a class="btn solid-violet" href="https://wa.me/5532984943333?text=Olá, quero conversar sobre um projeto." target="_blank" rel="noopener">Falar com a equipe</a>
+        <a class="btn ghost" href="#clientes">Ver quem confia</a>
+      </div>
     </div>
-    <script src="vendors/jquery/jquery.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/owl-carousel/js/owl.carousel.min.js"></script>
-    <script src="vendors/aos/js/aos.js"></script>
-    <script src="js/landingpage.js"></script>
+  </div>
+  <div class="wrap hero-foot">
+    <span>Estratégia · Execução · Medição</span>
+    <span class="scroll-hint">Role para ver</span>
+  </div>
+</header>
+
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee" id="marquee">
+    <span>Marketing no Google</span><span>Sites que convertem</span><span>Gestão de redes</span><span>Identidade de marca</span><span>Relatórios mensais</span><span>Conteúdo com propósito</span>
+    <span>Marketing no Google</span><span>Sites que convertem</span><span>Gestão de redes</span><span>Identidade de marca</span><span>Relatórios mensais</span><span>Conteúdo com propósito</span>
+  </div>
+</div>
+
+<section id="servicos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">O que fazemos</span>
+      <h2>Quatro frentes.<br>Um objetivo: <em>gerar demanda</em>.</h2>
+      <p>Não vendemos pacote de post. Cada frente existe para levar o cliente certo até você e transformar atenção em contato.</p>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-row" data-svc>
+        <span class="svc-tag">GGL</span>
+        <h3>Marketing no Google</h3>
+        <span class="svc-arrow">→</span>
+        <div class="svc-body">
+          <p>Quem procura no Google já quer comprar. Posicionamos sua empresa exatamente nesse momento: busca orgânica, anúncios e presença local para você aparecer antes do concorrente.</p>
+          <ul><li>SEO</li><li>Google Ads</li><li>Perfil da empresa</li><li>Busca local</li></ul>
+        </div>
+      </div>
+      <div class="svc-row" data-svc>
+        <span class="svc-tag">WEB</span>
+        <h3>Sites que convertem</h3>
+        <span class="svc-arrow">→</span>
+        <div class="svc-body">
+          <p>Site institucional não é cartão de visita: é vendedor trabalhando 24 horas. Rápido, responsivo e desenhado para transformar visita em contato no WhatsApp.</p>
+          <ul><li>Design sob medida</li><li>Performance</li><li>SEO técnico</li><li>Conversão</li></ul>
+        </div>
+      </div>
+      <div class="svc-row" data-svc>
+        <span class="svc-tag">SOC</span>
+        <h3>Gestão de redes sociais</h3>
+        <span class="svc-arrow">→</span>
+        <div class="svc-body">
+          <p>Assumimos a operação inteira: planejamento, produção, publicação e análise. Você recupera seu tempo e ganha consistência, sem sumir do feed quando a semana aperta.</p>
+          <ul><li>Planejamento editorial</li><li>Produção de conteúdo</li><li>Impulsionamento</li><li>Análise mensal</li></ul>
+        </div>
+      </div>
+      <div class="svc-row" data-svc>
+        <span class="svc-tag">BRD</span>
+        <h3>Identidade de marca</h3>
+        <span class="svc-arrow">→</span>
+        <div class="svc-body">
+          <p>Marca não é logo: é a razão de escolherem você. Construímos identidade visual e verbal que sustenta preço, posicionamento e reconhecimento.</p>
+          <ul><li>Logo e sistema visual</li><li>Tom de voz</li><li>Manual de marca</li><li>Aplicações</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="dark-band" id="metodo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Como trabalhamos</span>
+      <h2>Simples de acompanhar.<br>Difícil de copiar.</h2>
+      <p>Você sabe o que está sendo feito, por que está sendo feito e o que mudou no fim do mês. Sem caixa-preta.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-num">FASE 01</span>
+        <h3>Diagnóstico</h3>
+        <p>Entendemos seu negócio, seu cliente e seus concorrentes antes de propor qualquer coisa. Estratégia sem contexto é chute caro.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">FASE 02</span>
+        <h3>Execução</h3>
+        <p>Nossa equipe produz e publica. Conteúdo, site, anúncio, marca: o trabalho pesado fica conosco, a aprovação fica com você.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">FASE 03</span>
+        <h3>Medição</h3>
+        <p>Relatório todo mês: de onde vêm seus clientes, o que performou e o que vamos ajustar. Decisão baseada em dado, não em achismo.</p>
+      </div>
+    </div>
+    <div class="truth reveal">
+      <p>Se não dá para medir, não dá para cobrar por resultado. <em>Por isso a gente mede.</em></p>
+      <a class="btn on-dark ghost" href="https://wa.me/5532984943333?text=Olá, quero um diagnóstico do meu negócio." target="_blank" rel="noopener">Pedir um diagnóstico</a>
+    </div>
+  </div>
+</div>
+
+<section class="clients" id="clientes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Quem confia</span>
+      <h2>De consultório a software house.<br><em>Cuidamos de cada relação.</em></h2>
+      <p>Clientes de saúde, tecnologia e educação que seguem com a gente porque o trabalho aparece.</p>
+    </div>
+    <div class="client-grid reveal">
+      <a class="client-card wide" href="https://www.planejesus.com.br/" target="_blank" rel="noopener">
+        <div class="cc-left">
+          <span class="client-sector">Saúde pública · Consultoria</span>
+          <h3>PlanejeSUS</h3>
+          <p>A maior consultoria de saúde pública do Brasil.</p>
+        </div>
+        <span class="visit">Visitar</span>
+      </a>
+      <a class="client-card" href="https://endogastrodiipro.com.br/" target="_blank" rel="noopener">
+        <span class="client-sector">Educação médica</span>
+        <h3>EndogastroDIIPRO</h3>
+        <p>O melhor curso de Gastroenterologia e DII do Brasil.</p>
+        <span class="visit">Visitar</span>
+      </a>
+      <a class="client-card" href="https://www.instagram.com/endogastrojf/" target="_blank" rel="noopener">
+        <span class="client-sector">Saúde · Clínica</span>
+        <h3>EndogastroJF</h3>
+        <p>Gastroenterologia e Endoscopia em Juiz de Fora.</p>
+        <span class="visit">Visitar</span>
+      </a>
+      <a class="client-card" href="https://www.agentzapia.com.br/" target="_blank" rel="noopener">
+        <span class="client-sector">Tecnologia · IA</span>
+        <h3>AgentZapIA</h3>
+        <p>WhatsApp, Instagram e inteligência artificial em um só lugar.</p>
+        <span class="visit">Visitar</span>
+      </a>
+      <a class="client-card" href="https://smarti9-tech.github.io/smarti9-site/" target="_blank" rel="noopener">
+        <span class="client-sector">Tecnologia · Software</span>
+        <h3>Smarti9</h3>
+        <p>Fábrica de softwares e aplicativos inovadores.</p>
+        <span class="visit">Visitar</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap reveal">
+    <span class="eyebrow">Próximo passo</span>
+    <h2 style="margin-top:18px">Seu concorrente<br>já otimi<span class="z">z</span>ou?</h2>
+    <p>Conte seu projeto em uma mensagem. Respondemos com uma leitura honesta do que faz sentido para o seu momento, sem proposta genérica.</p>
+    <div class="cta-actions">
+      <a class="btn solid-violet" href="https://wa.me/5532984943333?text=Olá, quero conversar sobre um projeto." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn ghost" href="mailto:contato@otimizesse.com.br">Enviar e-mail</a>
+    </div>
+    <p class="wa-note">Resposta em horário comercial · Juiz de Fora, MG</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="#top" class="logo">Otimi<span class="z">Z</span>esse</a>
+        <p style="margin-top:14px;max-width:32ch;color:rgba(243,244,248,.6);font-size:.95rem">Agência digital especializada em soluções para negócios.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navegar</h4>
+        <a href="#servicos">Serviços</a>
+        <a href="#metodo">Método</a>
+        <a href="#clientes">Clientes</a>
+      </div>
+      <div class="foot-col">
+        <h4>Redes</h4>
+        <a href="https://www.instagram.com/otimizesse/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/otimizesse/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/5532984943333" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5532984943333" target="_blank" rel="noopener">+55 32 98494-3333</a>
+        <a href="#top">Juiz de Fora · MG</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> OtimiZesse</span>
+      <span>Estratégia · Execução · Medição</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5532984943333?text=Olá, gostaria de conversar sobre um projeto." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4.2 28l6.3-2c1.9 1 4 1.6 6.2 1.6 6.6 0 11.9-5.3 11.9-11.9C28.6 8.3 22.6 3 16 3zm0 21.7c-2 0-3.9-.6-5.5-1.6l-.4-.2-3.7 1.2 1.2-3.6-.3-.4c-1.2-1.7-1.9-3.8-1.9-6 0-5.4 4.5-9.9 10-9.9s10.6 4.5 10.6 9.9c0 5.5-4.5 10.6-10 10.6zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+// Nav: fundo ao rolar
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+// Menu mobile
+const toggle=document.getElementById('menuToggle');
+const links=document.getElementById('navLinks');
+toggle.addEventListener('click',()=>{
+  toggle.classList.toggle('open');
+  links.classList.toggle('open');
+});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  toggle.classList.remove('open');links.classList.remove('open');
+}));
+
+// Serviços: expandir uma linha por vez
+document.querySelectorAll('[data-svc]').forEach(row=>{
+  row.addEventListener('click',()=>{
+    const wasOpen=row.classList.contains('open');
+    document.querySelectorAll('[data-svc]').forEach(r=>r.classList.remove('open'));
+    if(!wasOpen)row.classList.add('open');
+  });
+});
+
+// Reveal on scroll
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Ano
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
-
 </html>
